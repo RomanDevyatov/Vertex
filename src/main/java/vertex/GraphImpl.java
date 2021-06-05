@@ -85,7 +85,7 @@ public class GraphImpl<F extends Comparable<F>> extends Validator<F> implements 
 
     @Override
     public boolean deleteVertex(Vertex<F> v) {
-        if (checkDeleteVertex(v)) {
+        if (checkDeleteVertex(vertices, v)) {
             vertices.remove(v);
             edges.removeIf(edge -> edge.getVertex().equals(v) || edge.getVertexAnother().equals(v));
             vertexNumber--;

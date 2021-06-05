@@ -24,8 +24,8 @@ public class Validator<F> {
         return checkIfEdgeIsNotNull(e) && edges.contains(e);
     }
 
-    protected boolean checkDeleteVertex(Vertex<F> v) {
-        return checkIfVertexIsNotNull(v);
+    protected boolean checkDeleteVertex(List<Vertex<F>> vertices, Vertex<F> v) {
+        return checkIfVertexIsNotNull(v) && vertices.contains(v);
     }
 
 }
