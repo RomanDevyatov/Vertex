@@ -1,6 +1,8 @@
 package vertex;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class GraphImpl<F extends Comparable<F>> extends Validator<F> implements Graph<F> {
@@ -58,6 +60,7 @@ public class GraphImpl<F extends Comparable<F>> extends Validator<F> implements 
         if (checkAddEdge(edges, e)) {
             edges.add(e);
             edgeNumber++;
+            Collections.sort(edges);
             return true;
         }
         return false;
@@ -68,6 +71,7 @@ public class GraphImpl<F extends Comparable<F>> extends Validator<F> implements 
         if (checkAddVertex(vertices, v)) {
             vertices.add(v);
             vertexNumber++;
+            Collections.sort(vertices);
             return true;
         }
         return false;

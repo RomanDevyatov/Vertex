@@ -2,7 +2,7 @@ package vertex;
 
 import java.util.Objects;
 
-public class Edge<F> extends Validator<F> {
+public class Edge<F> extends Validator<F> implements Comparable<Edge<F>> {
     private Vertex<F> vertex;
     private Vertex<F> vertexAnother;
 
@@ -52,5 +52,13 @@ public class Edge<F> extends Validator<F> {
         int result = vertex != null ? vertex.hashCode() : 0;
         result = 31 * result + (vertexAnother != null ? vertexAnother.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public int compareTo(Edge<F> o) {
+        if (vertex.equals(o.getVertex()) && vertexAnother.equals(o.getVertexAnother())) {
+            return 0;
+        }
+        return vertex.compareTo(o.getVertex());
     }
 }

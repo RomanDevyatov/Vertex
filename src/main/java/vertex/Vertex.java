@@ -1,6 +1,6 @@
 package vertex;
 
-public class Vertex<F> {
+public class Vertex<F> implements Comparable<Vertex<F>>{
     private F value;
 
     public F getValue() {
@@ -39,5 +39,10 @@ public class Vertex<F> {
     @Override
     public int hashCode() {
         return value.hashCode();
+    }
+
+    @Override
+    public int compareTo(Vertex<F> o) {
+        return hashCode() - o.hashCode();
     }
 }

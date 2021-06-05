@@ -15,6 +15,7 @@ public class Main {
         Vertex<String> ver4 = new Vertex<>("d");
         Vertex<String> ver5 = new Vertex<>();
         List<Vertex<String>> vertexList = new ArrayList(Arrays.asList( ver2, ver1,ver4, ver3));
+        Vertex<String> ver11 = new Vertex<>("f");
 
         Edge<String> edge1 = new Edge<>(ver1, ver2);
         Edge<String> edge2 = new Edge<>(ver1, ver3);
@@ -24,7 +25,7 @@ public class Main {
         Edge<String> edge6 = new Edge<>(ver2, ver5);
 
         GraphImpl<String> graph = new GraphImpl<>(vertexList);
-
+        graph.addVertex(ver11);
         graph.addEdge(edge1);
         graph.addEdge(edge2);
         graph.addEdge(edge2);

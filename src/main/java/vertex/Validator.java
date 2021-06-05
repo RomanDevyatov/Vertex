@@ -8,12 +8,12 @@ public class Validator<F> {
         return vertex != null && vertex.getValue() != null;
     }
 
-    protected boolean checkAddVertex(List<Vertex<F>> vertexList, Vertex<F> vertex) {
-        return checkIfVertexIsNotNull(vertex) && !vertexList.contains(vertex);
-    }
-
     protected boolean checkIfEdgeIsNotNull(Edge<F> e) {
         return e != null && e.getVertex() != null && e.getVertexAnother() != null;
+    }
+
+    protected boolean checkAddVertex(List<Vertex<F>> vertices, Vertex<F> vertex) {
+        return checkIfVertexIsNotNull(vertex) && !vertices.contains(vertex);
     }
 
     protected boolean checkAddEdge(List<Edge<F>> list, Edge<F> e) {
